@@ -6,11 +6,9 @@
     <img src="{% static 'findhouse/casa.png' %}" alt="casa" class="img-fluid"
 >
 </div>
-<br>
 <div class="container card bg-white">
     <div class="container">
         <br>
-        
         <h1 class="display-3">Encuentra la casa que tanto buscas</h1>
         
         <h6 class="display-4">Por favor rellena los siguientes campos</h6>
@@ -21,14 +19,10 @@
             <span class="font-weight-light">Seleccione la colonia</span><br>
             <select name="colonia" id="colonia">
                 <option value="ruiz">Eduardo Ruiz</option>
-                <option value="leandro">Leandro Valle</option>
-                <option value="libertad">Tierra y Libertad</option>
                 <option value="realito">El Realito</option>
                 <option value="chapultepec">Chapultepec</option>
-                <option value="loma">La Loma</option>
                 <option value="camelinas">Camelinas</option>
                 <option value="americas">Americas</option>
-                <option value="altozano">Altozano</option>
             </select>
 
             <!-- -------------------------------------------------------- -->
@@ -50,12 +44,17 @@
         <!-- -------------------------------------------------------- -->
         <!-- -------------------------------------------------------- -->
         <br><br>
-        <span class="font-weight-light">Cuartos</span><br>
+        <span class="font-weight-light">Caracteristicas</span><br>
         <select multiple="multiple" name="rooms" id="rooms">
-            <option value="recamara_extra">Recamaras</option>
-            <option value="sala">Sala</option>
-            <option value="wc">Banio</option>
+            <option value="recamaras">Recamaras</option>
             <option value="cocina">Cocina</option>
+            <option value="sala">Sala</option>
+            <option value="comedor">Comedor</option>
+            <option value="banio">Baño</option>
+            <option value="patio">Patio</option>
+            <option value="terraza">Terraza</option>
+            <option value="servicio">Cuarto de servicio</option>
+            <option value="piscina">Piscina</option>
         </select>
 
             <!-- -------------------------------------------------------- -->
@@ -78,7 +77,6 @@
             <!-- -------------------------------------------------------- -->
             <span class="font-weight-light">Precio</span>
             <input type="number" name="price" style="overflow: hidden; resize: none"
-            oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'
             class="form-control"></input><br>
 
 

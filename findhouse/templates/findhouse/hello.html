@@ -1,9 +1,44 @@
 {% extends "findhouse/layout.html" %}
+{% load static %}
 
 {% block body %}
-<div class="container">
-    <h1>Yeah</h1>
-    {{ query }}
+<div class="container card bg-white">
+    <div class="container">
+        <br>
+        <h1 class="display-4">Los resultados de tu busqueda son:</h1><br>
+        <table class="table table-hover">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Casa</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Colonia</th>
+                <th scope="col">% Servicios</th>
+                <th scope="col">% Habitaciones</th>
+                <th scope="col">% Pago</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for value in query %}
+              <tr>
+                <th scope="row">{{value.id}}</th>
+                <td scope="row">{{value.casaName}}</td>
+                <td scope="row">${{value.precio}}</td>
+                <td scope="row">{{value.locacion}}</td>
+                <td scope="row">{{value.promServ}}%</td>
+                <td scope="row">{{value.promHab}}%</td>
+                <td scope="row">{{value.promPayment}}%</td>
+              </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+    </div>
 </div>
+<br>
+<div class="justify-content-center">
+    <img src="{% static 'findhouse/casa.png' %}" alt="casa" class="img-fluid"
+>
+</div>
+<br>
     
 {% endblock %}

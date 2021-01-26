@@ -4,53 +4,44 @@ import sys
 import json
 
 
-def serialize(id):
-	return {
-		"id": id,
-		"created_at": datetime.now().strftime("%b %d %y, %I:%M %p")
-	}
+consult = f"findCasa(C,{str(sys.argv[1])},{str(sys.argv[2])},PCServicios,{str(sys.argv[3])},{str(sys.argv[4])},PCHabitaciones,{str(sys.argv[5])},{str(sys.argv[6])},PCPay,{str(sys.argv[7])},PR,{str(sys.argv[8])},Loc)."
 
-
-query = f"findCasa(C,{str(sys.argv[1])},{str(sys.argv[2])},PCServicios,{str(sys.argv[3])},{str(sys.argv[4])},PCHabitaciones,{str(sys.argv[5])},{str(sys.argv[6])},PCPay,{str(sys.argv[7])},PR,{str(sys.argv[8])},Loc)."
-
-#print(query)
 
 prolog = Prolog()
 prolog.consult("findhouse/external/rules.pl")
 data = {}
-dataCasa = {}
 data['data'] = []
-i = 0
-#
+i = 1
 
-for casa in prolog.query(query):
+
+def serialize(id):
+	return {
+		"id": id,
+	}
+
+
+for casa in prolog.query(consult):
 	dataCasa = serialize(i)
-	#print(casa.keys())
-	if 'C' in casa.keys():
-		dataCasa['casa'] = casa['C']
-
-	if 'PCServicios' in casa.keys():
-		dataCasa['promedio_servicios'] = casa['PCServicios']
-
-	if 'PCHabitaciones' in casa.keys():
-		dataCasa['promedio_habitaciones'] = casa['PCHabitaciones']
-
-	if 'PCPay' in casa.keys():
-		dataCasa['promPayment'] = casa['PCPay']
-
-	if 'PR' in casa.keys():
-		dataCasa['precio'] = casa['PR']
-
-	if 'Loc' in casa.keys():
-		dataCasa['locacion'] = casa['Loc']
-
-	data['data'].append(dataCasa)
 	i += 1
+	# ----------------
+	dataCasa['casaName'] = casa['C'].capitalize().replace('_', ' ')
+	# ----------------
+	dataCasa['precio'] = casa['PR']
+	# ----------------
+	dataCasa['locacion'] = casa['Loc'].capitalize()
+	# ----------------
+	percent = casa['PCServicios']
+	dataCasa['promServ'] = "{:.1f}".format(percent)
+	# ----------------
+	percent = casa['PCHabitaciones']
+	dataCasa['promHab'] = "{:.1f}".format(percent)
+	# ----------------
+	percent = casa['PCPay']
+	dataCasa['promPayment'] = "{:.1f}".format(percent)
+	# ----------------
+	data['data'].append(dataCasa)
 
 
-
-#print(data['data'])
-# CODE TO WRITE DATA PRLOG TO FORMAT JSON
 with open('findhouse/external/result.json', 'w') as jsonFile:
     json.dump(data, jsonFile)
     jsonFile.close()

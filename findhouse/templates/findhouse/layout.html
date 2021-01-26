@@ -4,7 +4,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Prolog App</title>
+        <title>Encuentra tu casa ideal</title>
+        <link rel="icon" type="image/x-icon" href="{% static 'findhouse/logo.png' %}">
         <link rel="stylesheet" href="{% static 'findhouse/bootstrap.min.css' %}" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <script src="{% static 'findhouse/bootstrap.min.js' %}"></script>
     </head>
@@ -13,6 +14,7 @@
             <nav class="navbar navbar-dark bg-dark justify-content-center">
                 <img src="{% static 'findhouse/logo.png' %}" alt="logo" class="img-fluid" width="50">
             </nav>
+            <br>
             {% block body %} 
             {% endblock %}
         </div>

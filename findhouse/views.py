@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from . import util
 from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse
+import json
 
 def index(request):
     return render(request, "findhouse/index.html")
@@ -35,10 +37,23 @@ def response(request):
         
         #print(services)
         util.response(query)
-      
-        return render(request, "findhouse/hello.html", {
-            "query": query,
-        })
+
+        try:
+            with open("findhouse/external/result.json") as jsonFile:
+                jsonObject = json.load(jsonFile)
+                jsonFile.close()
+                data = jsonObject['data']   
+                
+            return render(request, "findhouse/hello.html", {
+                "query": data
+            })
+            
+        except Exception as e:
+            return JsonResponse({
+                "message":"SERVER ERROR",
+                "error": str(e)}, status=201)
+
+        
     else:    
         return "error"
 

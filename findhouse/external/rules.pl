@@ -20,20 +20,20 @@ casa(premium_v4).
  /* ----------------Colonias----------------- */
  /* ----------------------------------------- */
 colonia(basica_v1, ruiz).
-colonia(basica_v2, leandro).
-colonia(basica_v3, libertad).
+colonia(basica_v2, ruiz).
+colonia(basica_v3, chapultepec).
 colonia(basica_v4, realito).
 colonia(estandar_v1, realito).
 colonia(estandar_v2, chapultepec).
-colonia(estandar_v3, santa).
-colonia(estandar_v4, loma).
+colonia(estandar_v3, ruiz).
+colonia(estandar_v4, camelinas).
 colonia(estandar_v5, camelinas).
-colonia(estandar_v6, santa).
+colonia(estandar_v6, realito).
 colonia(estandar_v7, chapultepec).
-colonia(estandar_v8, loma).
-colonia(premium_v1, altozano).
+colonia(estandar_v8, camelinas).
+colonia(premium_v1, americas).
 colonia(premium_v2, americas).
-colonia(premium_v3, altozano).
+colonia(premium_v3, americas).
 colonia(premium_v4, americas).
 
  /* ----------------Servicios---------------- */
@@ -57,22 +57,21 @@ servicios(premium_v4, [luz,agua,drenaje,transporte,internet,cable,limpieza,segur
 
  /* --------------Habitaciones--------------- */
  /* ----------------------------------------- */
-habitaciones(basica_v1, [sala,cocina]).
-habitaciones(basica_v2, [sala,cochera,cocina,wc]).
-habitaciones(basica_v3, [sala,cocina,wc]).
-habitaciones(basica_v4, [cocina,wc]).
-habitaciones(estandar_v1, [sala,cochera,cocina,wc,recamara_extra,patio_de_servicio,lavandería,gym]).
-habitaciones(estandar_v2, [sala,cochera,cocina,wc,recamara_extra,patio_de_servicio,lavandería,estudio,gym,cuarto_de_juegos,sala_de_cine]).
-habitaciones(estandar_v3, [wc,lavandería]).
-habitaciones(estandar_v4, [sala,cochera,cocina,wc,recamara_extra,patio_de_servicio,lavandería,estudio,gym,cuarto_de_juegos,sala_de_cine]).
-habitaciones(estandar_v5, [recamara_extra]).
-habitaciones(estandar_v6, [sala,cochera,cocina,wc,patio_de_servicio,lavandería,estudio,gym,cuarto_de_juegos,sala_de_cine]).
-habitaciones(estandar_v7, [sala,cochera,cocina,wc,recamara_extra,patio_de_servicio,lavandería]).
-habitaciones(estandar_v8, [sala,cochera,cocina,wc]).
-habitaciones(premium_v1, [cochera,cocina,wc,recamara_extra,patio_de_servicio,gym]).
-habitaciones(premium_v2, [sala,cochera,cocina,wc,recamara_extra,patio_de_servicio,lavandería,estudio]).
-habitaciones(premium_v3, [sala,cochera,cocina,wc,recamara_extra,patio_de_servicio,lavandería,estudio,gym,cuarto_de_juegos,sala_de_cine]).
-habitaciones(premium_v4, [sala,cochera,cocina,lavandería,estudio,gym,cuarto_de_juegos,sala_de_cine]).
+habitaciones(basica_v1, [recamaras,sala,banio,patio,terraza]).
+habitaciones(basica_v2, [recamaras,cocina,sala,comedor,banio,jardin,servicio]).
+habitaciones(basica_v3, [recamaras,cocina,sala,comedor,banio,patio,piscina]).
+habitaciones(basica_v4, [recamaras,cocina,sala,comedor,banio,patio]).
+habitaciones(estandar_v1, [recamaras,sala,banio,patio,terraza,servicio]).
+habitaciones(estandar_v2, [recamaras,cocina,sala,comedor,banio,patio,jardin]).
+habitaciones(estandar_v3, [recamaras,cocina,banio,jardin]).
+habitaciones(estandar_v4, [recamaras,cocina,sala,comedor,banio,jardin,servicio]).
+habitaciones(estandar_v6, [recamaras,cocina,comedor,banio,patio,jardin,servicio]).
+habitaciones(estandar_v7, [recamaras,sala,comedor,banio,terraza,jardin,piscina]).
+habitaciones(estandar_v8, [recamaras,cocina,sala,comedor,banio,patio,servicio]).
+habitaciones(premium_v1, [recamaras,cocina,sala,comedor,banio,patio,terraza,jardin,servicio]).
+habitaciones(premium_v2, [recamaras,cocina,sala,banio,patio,terraza,servicio,piscina]).
+habitaciones(premium_v3, [recamaras,cocina,sala,comedor,banio,patio,jardin,servicio,piscina]).
+habitaciones(premium_v4, [recamaras,cocina,sala,comedor,banio,patio,terraza,jardin,servicio,piscina]).
 
  /* ---------------Tipo de pago-------------- */
  /* ----------------------------------------- */
@@ -95,22 +94,22 @@ payment(premium_v4, [efectivo,credito,hipoteca,prestamo]).
 
  /* ----------------Precios------------------ */
  /* ----------------------------------------- */
-precio(basica_v1, 500000).
-precio(basica_v2, 600000).
-precio(basica_v3, 700000).
-precio(basica_v4, 800000).
-precio(estandar_v1, 1000000).
-precio(estandar_v2, 1000000).
-precio(estandar_v3, 1100000).
-precio(estandar_v4, 1120000).
-precio(estandar_v5, 1300000).
-precio(estandar_v6, 1350000).
-precio(estandar_v7, 1400000).
-precio(estandar_v8, 1500000).
-precio(premium_v1, 2200000).
-precio(premium_v2, 2230000).
-precio(premium_v3, 2400000).
-precio(premium_v4, 2500000).
+precio(basica_v1, 500000.0).
+precio(basica_v2, 600000.0).
+precio(basica_v3, 700000.0).
+precio(basica_v4, 800000.0).
+precio(estandar_v1, 1000000.0).
+precio(estandar_v2, 1000000.0).
+precio(estandar_v3, 1100000.0).
+precio(estandar_v4, 1120000.0).
+precio(estandar_v5, 1300000.0).
+precio(estandar_v6, 1350000.0).
+precio(estandar_v7, 1400000.0).
+precio(estandar_v8, 1500000.0).
+precio(premium_v1, 2200000.0).
+precio(premium_v2, 2230000.0).
+precio(premium_v3, 2400000.0).
+precio(premium_v4, 2500000.0).
 
 
  /* -----------------Logica------------------ */
