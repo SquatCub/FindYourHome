@@ -40,12 +40,12 @@ def response(request):
 
         try:
             with open("findhouse/external/result.json") as jsonFile:
-                jsonObject = json.load(jsonFile)
+                resultados = json.load(jsonFile)
                 jsonFile.close()
-                data = jsonObject['data']   
+                res = resultados  
                 
             return render(request, "findhouse/hello.html", {
-                "query": data
+                "query": res
             })
             
         except Exception as e:

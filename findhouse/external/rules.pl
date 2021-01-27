@@ -111,6 +111,24 @@ precio(premium_v2, 2230000.0).
 precio(premium_v3, 2400000.0).
 precio(premium_v4, 2500000.0).
 
+ /* -----------------Contacto------------------ */
+ /* ----------------------------------------- */
+contacto(basica_v1, 4431235950).
+contacto(basica_v2, 4432953857).
+contacto(basica_v3, 4438123902).
+contacto(basica_v4, 4591084749).
+contacto(estandar_v1, 4431234567).
+contacto(estandar_v2, 4321205423).
+contacto(estandar_v3, 4561034532).
+contacto(estandar_v4, 4591213456).
+contacto(estandar_v5, 4561296547).
+contacto(estandar_v6, 4563429532).
+contacto(estandar_v7, 4593410456).
+contacto(estandar_v8, 3221564543).
+contacto(premium_v1, 4551112947).
+contacto(premium_v2, 4623412845).
+contacto(premium_v3, 4582345098).
+contacto(premium_v4, 4431238342).
 
  /* -----------------Logica------------------ */
  /* ----------------------------------------- */
@@ -126,7 +144,7 @@ co([X|T],L2,C):-not(member(X,L2)),co(T,L2,C2),C is C2.
 
  /* ----------------Funcion------------------ */
  /* ----------------------------------------- */
-findCasa(C,S,PMServicios,PCServicios,H,PMHabitaciones,PCHabitaciones,M,PMPayment,PCPayment,Presupuesto,Precio,Locacion,U):-casa(C),
+findCasa(C,S,PMServicios,PCServicios,H,PMHabitaciones,PCHabitaciones,M,PMPayment,PCPayment,Presupuesto,Precio,Locacion,U,Con):-casa(C),
 				servicios(C,CS),
 				largo(CS,LargoA),largo(S,LargoB),
 				NGambos is LargoA + LargoB,
@@ -152,5 +170,7 @@ findCasa(C,S,PMServicios,PCServicios,H,PMHabitaciones,PCHabitaciones,M,PMPayment
 				Precio is (PrecioCasa*1),
 				Presupuesto>=Precio,
 				colonia(C,Locacion),
-				U = Locacion.
+				U = Locacion,
+				contacto(C,Contacto),
+				Con = Contacto.
 
