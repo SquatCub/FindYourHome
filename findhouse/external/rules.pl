@@ -20,15 +20,15 @@ casa(premium_v4).
  /* ----------------Colonias----------------- */
  /* ----------------------------------------- */
 colonia(basica_v1, ruiz).
-colonia(basica_v2, ruiz).
+colonia(basica_v2, chapultepec).
 colonia(basica_v3, chapultepec).
-colonia(basica_v4, realito).
-colonia(estandar_v1, realito).
+colonia(basica_v4, camelinas).
+colonia(estandar_v1, ruiz).
 colonia(estandar_v2, chapultepec).
 colonia(estandar_v3, ruiz).
 colonia(estandar_v4, camelinas).
 colonia(estandar_v5, camelinas).
-colonia(estandar_v6, realito).
+colonia(estandar_v6, ruiz).
 colonia(estandar_v7, chapultepec).
 colonia(estandar_v8, camelinas).
 colonia(premium_v1, americas).

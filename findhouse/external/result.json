@@ -1,1 +1,1 @@
-[]
+[{"id": 1, "casaName": "Basica v3", "precio": 700000.0, "locacion": "Chapultepec", "contacto": 4438123902, "promServ": "85.7", "promHab": "60.0", "promPayment": "100.0"}, {"id": 2, "casaName": "Estandar v2", "precio": 1000000.0, "locacion": "Chapultepec", "contacto": 4321205423, "promServ": "66.7", "promHab": "60.0", "promPayment": "33.3"}]

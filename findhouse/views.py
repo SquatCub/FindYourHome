@@ -35,15 +35,13 @@ def response(request):
         query['presupuesto'] = price
         query['Locacion'] = colonia
         
-        #print(services)
         util.response(query)
-
+        
         try:
             with open("findhouse/external/result.json") as jsonFile:
                 resultados = json.load(jsonFile)
                 jsonFile.close()
-                res = resultados  
-                
+                res = resultados      
             return render(request, "findhouse/hello.html", {
                 "query": res
             })
