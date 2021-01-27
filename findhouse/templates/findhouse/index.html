@@ -5,7 +5,7 @@
 <div class="justify-content-center">
     <img src="{% static 'findhouse/casa.png' %}" alt="casa" class="img-fluid"
 >
-</div>
+</div><br>
 <div class="container card bg-white">
     <div class="container">
         <br>
@@ -31,7 +31,7 @@
 
             <br><br>
             <span class="font-weight-light">Servicios</span><br>
-            <select class="custom-select" style="width:200px;" multiple="multiple" name="services" id="services">
+            <select class="custom-select" style="width:200px;" multiple="multiple" required name="services" id="services">
                 <option value="luz">Luz</option>
                 <option value="agua">Agua</option>
                 <option value="drenaje">Drenaje</option>
@@ -46,7 +46,7 @@
         <!-- -------------------------------------------------------- -->
         <br><br>
         <span class="font-weight-light">Caracteristicas</span><br>
-        <select class="custom-select" style="width:200px;" multiple="multiple" name="rooms" id="rooms">
+        <select class="custom-select" style="width:200px;" multiple="multiple" required name="rooms" id="rooms">
             <option value="recamaras">Recamaras</option>
             <option value="cocina">Cocina</option>
             <option value="sala">Sala</option>
@@ -77,7 +77,7 @@
             <!-- -------------------------------------------------------- -->
             <!-- -------------------------------------------------------- -->
             <span class="font-weight-light">Precio</span>
-            <input style="width:200px;" type="number" name="price" style="overflow: hidden; resize: none"
+            <input style="width:200px;" required type="number" name="price" style="overflow: hidden; resize: none"
             class="form-control"></input><br>
 
 
